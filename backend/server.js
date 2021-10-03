@@ -1,7 +1,7 @@
 var express = require("express");
 var app = express();
 var path = require("path");
-var port = 5000;
+const port = process.env.PORT || 3000;
 
 // serve the static files
 var static_location = path.join(__dirname, "../", "build");
