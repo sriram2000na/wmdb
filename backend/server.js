@@ -4,7 +4,8 @@ var path = require("path");
 var port = 5000;
 
 // serve the static files
-app.use(express.static("../build"));
+var static_location = path.join(__dirname, "../", "build");
+app.use(express.static(static_location));
 app.get("*", (req, res) => {
   var htmlFilePath = path.join(__dirname, "../", "build", "index.html");
   res.sendFile(htmlFilePath);
