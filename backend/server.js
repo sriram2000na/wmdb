@@ -3,11 +3,10 @@ var app = express();
 var path = require("path");
 var port = 5000;
 
-// serve the static file
+// serve the static files
 app.use(express.static("../build"));
 app.get("*", (req, res) => {
   var htmlFilePath = path.join(__dirname, "../", "build", "index.html");
-  //   console.log(htmlFilePath);
   res.sendFile(htmlFilePath);
 });
 
